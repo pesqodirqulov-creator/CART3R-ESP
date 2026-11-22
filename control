@@ -1,0 +1,17 @@
+Package: com.cart3r.esp
+
+Name: CART3R ESP
+
+Version: 1.0.0
+
+Architecture: iphoneos-arm64
+
+Description: Offline screenshot person detection overlay for iOS.
+
+Maintainer: CART3R
+
+Author: CART3R
+
+Section: Tweaks
+
+Depends: mobilesubstrate
