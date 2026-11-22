@@ -1,0 +1,28 @@
+name: CART3R iOS Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Theos
+        run: |
+          brew install ldid
+          git clone --recursive https://github.com/theos/theos.git $HOME/theos
+
+      - name: Build
+        run: |
+          export THEOS=$HOME/theos
+          make
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: CART3R-build
+          path: packages/*.deb
